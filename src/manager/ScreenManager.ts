@@ -45,7 +45,8 @@ export class ScreenManager
 	 */
 	public static addScreen(id:string, item:ScreenNavigatorItem):void
 	{
-		ScreenManager.sn.addScreen(id, item);
+		if(ScreenManager.sn)
+			ScreenManager.sn.addScreen(id, item);
 	}
 
 	/**
@@ -55,7 +56,18 @@ export class ScreenManager
 	 */
 	public static showScreen(id:string, transition:Function = null):void
 	{
-		ScreenManager.sn.showScreen(id, transition);
+		if(ScreenManager.sn)
+			ScreenManager.sn.showScreen(id, transition);
+	}
+
+	/**
+	 * 移出屏幕
+	 * @param transition 过渡
+	 */
+	public static clearScreen(transition:Function = null):void
+	{
+		if(ScreenManager.sn)
+			ScreenManager.sn.clearScreen(transition);
 	}
 
 	/**
@@ -64,7 +76,9 @@ export class ScreenManager
 	 */
 	public static getScreen(id:string):ScreenNavigatorItem
 	{
-		return ScreenManager.sn.getScreen(id);
+		if(ScreenManager.sn)
+			return ScreenManager.sn.getScreen(id);
+		return null;
 	}
 
 	/**
@@ -73,7 +87,9 @@ export class ScreenManager
 	 */
 	public static hasScreen(id:string):boolean
 	{
-		return ScreenManager.sn.hasOwnProperty(id);
+		if(ScreenManager.sn)
+			return ScreenManager.sn.hasOwnProperty(id);
+		return false;
 	}
 
 	/**
@@ -82,7 +98,9 @@ export class ScreenManager
 	 */
 	public static removeScreen(id:string):ScreenNavigatorItem
 	{
-		return ScreenManager.sn.removeScreen(id);
+		if(ScreenManager.sn)
+			return ScreenManager.sn.removeScreen(id);
+		return null;
 	}
 
 	/**
@@ -91,7 +109,8 @@ export class ScreenManager
 	 */
 	public static destroy(isDispose:boolean = false):void
 	{
-		ScreenManager.sn.destroy(isDispose);
+		if(ScreenManager.sn)
+			ScreenManager.sn.destroy(isDispose);
 		ScreenManager.sn = null;
 		delete ScreenManager.sn;
 	}

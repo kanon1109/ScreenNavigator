@@ -23,10 +23,22 @@ class Test1Screen extends Laya.Sprite
         this.btn.on(Laya.Event.CLICK, this, this.onBtnClickHandler);
 
         this.name = "test1";
+
+        this.on(Laya.Event.ADDED, this, function():void
+        {
+            console.log("addtostage test1");
+        });
+
+        this.on(Laya.Event.REMOVED, this, function():void
+        {
+            console.log("removetostage test1");
+        });
     }
 
     private onBtnClickHandler(event:Event):void
     {
-        ScreenManager.showScreen("test2", Slide.createSlideRightTransition());
+        // ScreenManager.showScreen("test2", Slide.createSlideRightTransition());
+        StackScreenManager.pushScreen("test2");
+
     }
 }

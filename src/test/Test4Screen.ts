@@ -1,16 +1,16 @@
 /*
-* 屏幕2;
+* 屏幕1;
 */
-class Test2Screen extends Laya.Sprite
+class Test4Screen extends Laya.Sprite
 {
-    private txt:Label;
+    private txt:Label; 
     private btn:Laya.Sprite;
     constructor()
     {
         super();
         this.txt = new Label();
         this.txt.fontSize = 30;
-        this.txt.text = "test2 screen";
+        this.txt.text = "test4 screen";
         this.txt.color = "#FFFFFF";
         this.txt.x = 100;
         this.txt.y = 100;
@@ -22,24 +22,21 @@ class Test2Screen extends Laya.Sprite
         this.addChild(this.btn);
         this.btn.on(Laya.Event.CLICK, this, this.onBtnClickHandler);
 
-        this.name = "test2";
+        this.name = "test4";
 
         this.on(Laya.Event.ADDED, this, function():void
         {
-            console.log("addtostage test2");
+            console.log("addtostage test1");
         });
 
         this.on(Laya.Event.REMOVED, this, function():void
         {
-            console.log("removetostage test2");
+            console.log("removetostage test1");
         });
     }
 
     private onBtnClickHandler(event:Event):void
     {
-        // ScreenManager.showScreen("test1", Slide.createSlideBottomTransition());
-        //ScreenManager.clearScreen(Slide.createSlideLeftTransition());
-        StackScreenManager.pushScreen("test3");
         StackScreenManager.pushScreen("test1");
     }
 }
