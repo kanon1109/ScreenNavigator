@@ -177,18 +177,19 @@ export class ScreenNavigator extends Laya.Sprite implements IBaseScreenNavigator
      * 销毁
      * @param isDispose 是否释放screen item的内存
      */
-	public destroy(isDispose:boolean=false):void
+	public destroySelf(isDispose:boolean=false):void
 	{
 		for (var key in this.screens) 
 		{
 			if (this.screens.hasOwnProperty(key)) 
 			{
 				var item:ScreenNavigatorItem = this.screens[key];
-				item.destroy(isDispose);
+				item.destroySelf(isDispose);
 			}
 		}
 		this.screens = null;
 		this.screenContainer.removeSelf();
+		this.screenContainer.destroy();
 		this.screenContainer = null;
 		this.activeScreen = null;
 		this.previousScreenInTransition = null;

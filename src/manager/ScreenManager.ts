@@ -1,7 +1,6 @@
 /**
 * 屏幕管理 用于创建单个屏幕导航
 */
-
 module manager
 {
 export class ScreenManager 
@@ -107,10 +106,14 @@ export class ScreenManager
 	 * 销毁
 	 * @param isDispose 是否销毁
 	 */
-	public static destroy(isDispose:boolean = false):void
+	public static destroySelf(isDispose:boolean = false):void
 	{
 		if(ScreenManager.sn)
-			ScreenManager.sn.destroy(isDispose);
+		{
+			ScreenManager.sn.destroySelf(isDispose);
+			ScreenManager.sn.removeSelf();
+			ScreenManager.sn.destroy();
+		}
 		ScreenManager.sn = null;
 		delete ScreenManager.sn;
 	}

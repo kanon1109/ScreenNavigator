@@ -48,6 +48,6 @@ export interface IBaseScreenNavigator
      * 销毁
      * @param isDispose 是否释放screen item的内存
      */
-	destroy(isDispose:boolean):void
+	destroySelf(isDispose:boolean):void
 }
 }

@@ -203,10 +203,14 @@ export class StackScreenManager
 	 * 销毁
 	 * @param isDispose 是否销毁
 	 */
-	public static destroy(isDispose:boolean = false):void
+	public static destroySelf(isDispose:boolean = false):void
 	{
 		if(StackScreenManager.sn)
-			StackScreenManager.sn.destroy(isDispose);
+		{
+			StackScreenManager.sn.destroySelf(isDispose);
+			StackScreenManager.sn.removeSelf();
+			StackScreenManager.sn.destroy();
+		}
 		StackScreenManager.sn = null;
 		delete StackScreenManager.sn;
 	}

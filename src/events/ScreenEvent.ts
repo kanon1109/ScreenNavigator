@@ -1,5 +1,5 @@
 /**
-* name 
+* 屏幕过渡事件 
 */
 module events
 {

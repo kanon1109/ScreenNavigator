@@ -46,7 +46,7 @@ export class ScreenNavigatorItem
      * 销毁
      * @param isDispose 是否释放screen的内存
      */
-    public destroy(isDispose:boolean=false):void
+    public destroySelf(isDispose:boolean=false):void
     {
         if(isDispose)
         {

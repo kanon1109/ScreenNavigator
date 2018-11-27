@@ -50,7 +50,7 @@ export class StackScreenNavigator extends ScreenNavigator
 	public popToRootScreen(properties:any=null):void
 	{
 		if(this.stack.length == 0) return;
-		let id = this.stack[0];
+		let id:string = this.stack[0];
 		this.stack.length = 0;
 		this.stack.push(id);
 		this.showScreen(id, this._popTransition, properties);
@@ -127,9 +127,9 @@ export class StackScreenNavigator extends ScreenNavigator
      * 销毁
      * @param isDispose 是否释放screen item的内存
      */
-	public destroy(isDispose:boolean):void
+	public destroySelf(isDispose:boolean=false):void
 	{
-		super.destroy(isDispose);
+		super.destroySelf(isDispose);
 		this.stack.length = 0;
 		this.stack = null;
 		delete this.stack;
