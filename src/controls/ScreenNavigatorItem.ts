@@ -48,8 +48,9 @@ export class ScreenNavigatorItem
      */
     public destroySelf(isDispose:boolean=false):void
     {
-        if(isDispose)
+        if(isDispose && this.screen)
         {
+            Laya.Tween.clearAll(this.screen);
             this.screen.removeSelf();
             this.screen.destroy();
         }
