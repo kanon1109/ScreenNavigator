@@ -13,6 +13,7 @@ export class ScreenNavigatorItem
     public id:string;
     public constructor(screen:Laya.Sprite)
     {
+        if(!screen) throw new Error("screen is null");
         this.screen = screen;
     }
 

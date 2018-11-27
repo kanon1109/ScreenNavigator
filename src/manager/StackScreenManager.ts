@@ -5,11 +5,11 @@ module manager
 {
 export class StackScreenManager 
 {
-	private static sn:StackScreenNavigator;
+	private static sn:controls.StackScreenNavigator;
 	public static init(container:Laya.Sprite):void
 	{
 		if(!container) return;
-		StackScreenManager.sn = new StackScreenNavigator();
+		StackScreenManager.sn = new controls.StackScreenNavigator();
 		container.addChild(StackScreenManager.sn);
 		StackScreenManager.setSize(Laya.stage.width, Laya.stage.height);
 		StackScreenManager.pos(0, 0);
@@ -42,7 +42,7 @@ export class StackScreenManager
 	 * @param id 屏幕id
 	 * @param item screen item
 	 */
-	public static addScreen(id:string, item:ScreenNavigatorItem):void
+	public static addScreen(id:string, item:controls.ScreenNavigatorItem):void
 	{
 		if(StackScreenManager.sn)
 			StackScreenManager.sn.addScreen(id, item);
@@ -161,7 +161,7 @@ export class StackScreenManager
 	 * 获取当前的一个screen item对象
 	 * @param id 屏幕id
 	 */
-	public static getScreen(id:string):ScreenNavigatorItem
+	public static getScreen(id:string):controls.ScreenNavigatorItem
 	{
 		if(StackScreenManager.sn)
 			return StackScreenManager.sn.getScreen(id);
@@ -183,11 +183,20 @@ export class StackScreenManager
 	 * 删除一个screen
 	 * @param id 屏幕id
 	 */
-	public static removeScreen(id:string):ScreenNavigatorItem
+	public static removeScreen(id:string):controls.ScreenNavigatorItem
 	{
 		if(StackScreenManager.sn)
 			return StackScreenManager.sn.removeScreen(id);
 		return null;
+	}
+
+	/**
+	 * 退出所有
+	 */
+	public static popAll():void
+	{
+		if(StackScreenManager.sn)
+			StackScreenManager.sn.popAll();
 	}
 
 	/**

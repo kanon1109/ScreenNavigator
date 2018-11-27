@@ -6,11 +6,11 @@ module manager
 {
 export class ScreenManager 
 {
-	private static sn:ScreenNavigator;
+	private static sn:controls.ScreenNavigator;
 	public static init(container:Laya.Sprite):void
 	{
 		if(!container) return;
-		ScreenManager.sn = new ScreenNavigator();
+		ScreenManager.sn = new controls.ScreenNavigator();
 		container.addChild(ScreenManager.sn);
 		ScreenManager.setSize(Laya.stage.width, Laya.stage.height);
 		ScreenManager.pos(0, 0);
@@ -43,7 +43,7 @@ export class ScreenManager
 	 * @param id 屏幕id
 	 * @param item screen item
 	 */
-	public static addScreen(id:string, item:ScreenNavigatorItem):void
+	public static addScreen(id:string, item:controls.ScreenNavigatorItem):void
 	{
 		if(ScreenManager.sn)
 			ScreenManager.sn.addScreen(id, item);
@@ -74,7 +74,7 @@ export class ScreenManager
 	 * 获取当前的一个screen item对象
 	 * @param id 屏幕id
 	 */
-	public static getScreen(id:string):ScreenNavigatorItem
+	public static getScreen(id:string):controls.ScreenNavigatorItem
 	{
 		if(ScreenManager.sn)
 			return ScreenManager.sn.getScreen(id);
@@ -96,7 +96,7 @@ export class ScreenManager
 	 * 删除一个screen
 	 * @param id 屏幕id
 	 */
-	public static removeScreen(id:string):ScreenNavigatorItem
+	public static removeScreen(id:string):controls.ScreenNavigatorItem
 	{
 		if(ScreenManager.sn)
 			return ScreenManager.sn.removeScreen(id);

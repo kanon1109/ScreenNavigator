@@ -10,7 +10,7 @@ class Test4Screen extends Laya.Sprite
         super();
         this.txt = new Label();
         this.txt.fontSize = 30;
-        this.txt.text = "test4 screen";
+        this.txt.text = "root screen";
         this.txt.color = "#FFFFFF";
         this.txt.x = 100;
         this.txt.y = 100;
@@ -26,17 +26,16 @@ class Test4Screen extends Laya.Sprite
 
         this.on(Laya.Event.ADDED, this, function():void
         {
-            console.log("addtostage test1");
         });
 
         this.on(Laya.Event.REMOVED, this, function():void
         {
-            console.log("removetostage test1");
         });
     }
 
     private onBtnClickHandler(event:Event):void
     {
-        StackScreenManager.pushScreen("test1");
+        manager.StackScreenManager.pushScreen("test1");
+        // ScreenManager.clearScreen(Slide.createSlideRightTransition());
     }
 }

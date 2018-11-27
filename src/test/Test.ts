@@ -1,14 +1,6 @@
 /*
 * name;
 */
-
-import ScreenNavigator = controls.ScreenNavigator;
-import StackScreenNavigator = controls.StackScreenNavigator;
-import ScreenNavigatorItem = controls.ScreenNavigatorItem;
-import StackScreenManager = manager.StackScreenManager;
-import ScreenManager = manager.ScreenManager;
-import Slide = motion.Slide;
-
 class Test extends Laya.Sprite
 {
     constructor()
@@ -20,25 +12,27 @@ class Test extends Laya.Sprite
         let test3:Test3Screen = new Test3Screen();
         let test4:Test4Screen = new Test4Screen();
 
-        StackScreenManager.init(this);
+        manager.StackScreenManager.init(this);
 
-        StackScreenManager.addScreen("test1", new ScreenNavigatorItem(test1));
-        StackScreenManager.addScreen("test2", new ScreenNavigatorItem(test2));
-        StackScreenManager.addScreen("test3", new ScreenNavigatorItem(test3));
-        StackScreenManager.addScreen("test4", new ScreenNavigatorItem(test4));
+        manager.StackScreenManager.addScreen("test1", new controls.ScreenNavigatorItem(test1));
+        manager.StackScreenManager.addScreen("test2", new controls.ScreenNavigatorItem(test2));
+        manager.StackScreenManager.addScreen("test3", new controls.ScreenNavigatorItem(test3));
+        manager.StackScreenManager.addScreen("test4", new controls.ScreenNavigatorItem(test4));
 
-        StackScreenManager.rootScreenID = "test4";
-        StackScreenManager.pushTransition = Slide.createSlideLeftTransition();
-        StackScreenManager.popTransition = Slide.createSlideRightTransition();
+        manager.StackScreenManager.rootScreenID = "test4";
+        manager.StackScreenManager.pushTransition = motion.Slide.createSlideLeftTransition();
+        manager.StackScreenManager.popTransition = motion.Slide.createSlideRightTransition();
 
-        // ScreenManager.init(this);
+        // manager.ScreenManager.init(this);
 
-        // ScreenManager.addScreen("test1", new ScreenNavigatorItem(test1));
-        // ScreenManager.addScreen("test2", new ScreenNavigatorItem(test2));
+        // manager.ScreenManager.addScreen("test1", new controls.ScreenNavigatorItem(test1));
+        // manager.ScreenManager.addScreen("test2", new controls.ScreenNavigatorItem(test2));
+        // manager.ScreenManager.addScreen("test3", new controls.ScreenNavigatorItem(test3));
+        // manager.ScreenManager.addScreen("test4", new controls.ScreenNavigatorItem(test4));
 
-        // ScreenManager.showScreen("test1");
-        // ScreenManager.removeScreen("test2");
-        // ScreenManager.destroy(true);
+        // manager.ScreenManager.showScreen("test1");
+        // manager.ScreenManager.removeScreen("test2");
+        // manager.ScreenManager.destroy(true);
 
 
     }
