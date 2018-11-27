@@ -198,6 +198,9 @@ export class ScreenNavigator extends Laya.Sprite implements IBaseScreenNavigator
 		delete this.screenContainer;
 		delete this.previousScreenInTransition;
 		delete this.activeScreen;
+
+		this.removeSelf();
+		this.destroy();
 	}
 }
 }

@@ -206,11 +206,7 @@ export class StackScreenManager
 	public static destroySelf(isDispose:boolean = false):void
 	{
 		if(StackScreenManager.sn)
-		{
 			StackScreenManager.sn.destroySelf(isDispose);
-			StackScreenManager.sn.removeSelf();
-			StackScreenManager.sn.destroy();
-		}
 		StackScreenManager.sn = null;
 		delete StackScreenManager.sn;
 	}

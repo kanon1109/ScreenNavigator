@@ -109,11 +109,7 @@ export class ScreenManager
 	public static destroySelf(isDispose:boolean = false):void
 	{
 		if(ScreenManager.sn)
-		{
 			ScreenManager.sn.destroySelf(isDispose);
-			ScreenManager.sn.removeSelf();
-			ScreenManager.sn.destroy();
-		}
 		ScreenManager.sn = null;
 		delete ScreenManager.sn;
 	}

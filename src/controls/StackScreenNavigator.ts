@@ -139,6 +139,9 @@ export class StackScreenNavigator extends ScreenNavigator
 
 		delete this._pushTransition;
 		delete this._popTransition;
+
+		this.removeSelf();
+		this.destroy();
 	}
 }
 }
