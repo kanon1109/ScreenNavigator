@@ -1,15 +1,17 @@
 /*
 * 屏幕1;
 */
-class Test4Screen extends Laya.Sprite
+module test
 {
-    private txt:Label; 
+export class Test4Screen extends Laya.Sprite
+{
+    private txt:Laya.Label; 
     private btn:Laya.Sprite;
     constructor()
     {
         super();
-        this.txt = new Label();
-        this.txt.fontSize = 30;
+        this.txt = new Laya.Label();
+        this.txt.fontSize = 50;
         this.txt.text = "root screen";
         this.txt.color = "#FFFFFF";
         this.txt.x = 100;
@@ -17,7 +19,7 @@ class Test4Screen extends Laya.Sprite
         this.addChild(this.txt);
 
         this.btn = new Laya.Sprite();
-        this.btn.graphics.drawRect(0, 0, 100, 40, "FF0000");
+        this.btn.graphics.drawRect(0, 0, 200, 80, "#FF0000");
         this.btn.autoSize = true;
         this.addChild(this.btn);
         this.btn.on(Laya.Event.CLICK, this, this.onBtnClickHandler);
@@ -38,4 +40,5 @@ class Test4Screen extends Laya.Sprite
         manager.StackScreenManager.pushScreen("test1");
         // ScreenManager.clearScreen(Slide.createSlideRightTransition());
     }
+}
 }

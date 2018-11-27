@@ -1,16 +1,18 @@
 /*
 * 屏幕2;
 */
-class Test2Screen extends Laya.Sprite
+module test
 {
-    private txt:Label;
+export class Test2Screen extends Laya.Sprite
+{
+    private txt:Laya.Label;
     private btn:Laya.Sprite;
     private backBtn:Laya.Sprite;
     constructor()
     {
         super();
-        this.txt = new Label();
-        this.txt.fontSize = 30;
+        this.txt = new Laya.Label();
+        this.txt.fontSize = 50;
         this.txt.text = "test2 screen";
         this.txt.color = "#FFFFFF";
         this.txt.x = 100;
@@ -18,15 +20,15 @@ class Test2Screen extends Laya.Sprite
         this.addChild(this.txt);
 
         this.btn = new Laya.Sprite();
-        this.btn.graphics.drawRect(0, 0, 100, 40, "FF0000");
+        this.btn.graphics.drawRect(0, 0, 200, 80, "#FF0000");
         this.btn.autoSize = true;
         this.addChild(this.btn);
         this.btn.on(Laya.Event.CLICK, this, this.onBtnClickHandler);
 
         this.backBtn = new Laya.Sprite();
-        this.backBtn.graphics.drawRect(0, 0, 100, 40, "FF0000");
+        this.backBtn.graphics.drawRect(0, 0, 200, 80, "#FF0000");
         this.backBtn.autoSize = true;
-        this.backBtn.x = Laya.stage.width - 100;
+        this.backBtn.x = Laya.stage.width - this.backBtn.width;
         this.addChild(this.backBtn);
         this.backBtn.on(Laya.Event.CLICK, this, this.onBackBtnClickHandler);
 
@@ -53,4 +55,5 @@ class Test2Screen extends Laya.Sprite
     {
         manager.StackScreenManager.popScreen();
     }
+}
 }

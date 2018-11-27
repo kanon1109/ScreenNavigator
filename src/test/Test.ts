@@ -1,7 +1,9 @@
 /*
 * name;
 */
-class Test extends Laya.Sprite
+module test
+{
+export class Test extends Laya.Sprite
 {
     constructor()
     {
@@ -36,4 +38,5 @@ class Test extends Laya.Sprite
 
 
     }
+}
 }

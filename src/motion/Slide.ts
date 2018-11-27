@@ -20,7 +20,7 @@ export class Slide
 				newScreen.x = newScreen.width;
 				newScreen.y = 0;
 				Laya.Tween.clearAll(newScreen);
-				Laya.Tween.to(newScreen, {x:0}, duration, ease, Handler.create(this, onComplete));
+				Laya.Tween.to(newScreen, {x:0}, duration, ease, Laya.Handler.create(this, onComplete));
 			}
 			if(oldScreen)
 			{
@@ -47,7 +47,7 @@ export class Slide
 				newScreen.x = -newScreen.width;
 				newScreen.y = 0;
 				Laya.Tween.clearAll(newScreen);
-				Laya.Tween.to(newScreen, {x:0}, duration, ease, Handler.create(this, onComplete));
+				Laya.Tween.to(newScreen, {x:0}, duration, ease, Laya.Handler.create(this, onComplete));
 			}
 			if(oldScreen)
 			{
@@ -74,7 +74,7 @@ export class Slide
 				newScreen.x = 0;
 				newScreen.y = newScreen.height;
 				Laya.Tween.clearAll(newScreen);
-				Laya.Tween.to(newScreen, {y:0}, duration, ease, Handler.create(this, onComplete));
+				Laya.Tween.to(newScreen, {y:0}, duration, ease, Laya.Handler.create(this, onComplete));
 			}
 			if(oldScreen)
 			{
@@ -101,7 +101,7 @@ export class Slide
 				newScreen.x = 0;
 				newScreen.y = -newScreen.height;
 				Laya.Tween.clearAll(newScreen);
-				Laya.Tween.to(newScreen, {y:0}, duration, ease, Handler.create(this, onComplete));
+				Laya.Tween.to(newScreen, {y:0}, duration, ease, Laya.Handler.create(this, onComplete));
 			}
 			if(oldScreen)
 			{
